@@ -1,0 +1,14 @@
+
+public class MyGraph {
+	int[][] edges;
+	
+	public MyGraph(){
+		
+	}
+	
+	public MyGraph(int N){
+		edges=new int[N][N];
+	}
+	
+	
+}

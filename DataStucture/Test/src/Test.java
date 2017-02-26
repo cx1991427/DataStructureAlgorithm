@@ -17,6 +17,13 @@ public class Test {
 //		node2.right=node5;
 //		node3.left=node6;
 //		node3.right=node7;	
-		
-	}}
+		ListNode<Integer> listNode=new ListNode<Integer>();
+	}
+}
+
+class ListNode<T>{
+	public T val;
+	public ListNode<T> next;
+	
+}
 

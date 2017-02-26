@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class MyGraph {
+	ArrayList<String> vertices;
+	int[][] edges;
+	
+	public MyGraph(int N){
+		vertices=new ArrayList<String>();
+		edges=new int[N][N];
+	}
+
+	public void insertVertex(String str){
+		vertices.add(str);
+	}
+	
+	public void insertEdge(int v1Index,int v2Index, int cost){
+		edges[v1Index][v2Index]=cost;
+	}
+	
+	public int getNumOfVertices(){
+		return vertices.size();
+	}
+}

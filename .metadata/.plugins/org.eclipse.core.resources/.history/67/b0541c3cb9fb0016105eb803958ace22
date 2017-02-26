@@ -1,0 +1,22 @@
+
+public class Test {
+	public static void main(String[] args){
+//		String[] names={"WA","NY","DC","CA"};
+		MyGraph graph=new MyGraph(4);
+		graph.insertVertex("WA");
+		graph.insertVertex("NY");
+		graph.insertVertex("DC");
+		graph.insertVertex("CA");
+		
+		graph.insertEdge(0, 3, 98);
+		graph.insertEdge(1, 0, 15);
+		graph.insertEdge(1, 2, 37);
+		graph.insertEdge(3, 2, 68);
+		
+		graph.insertEdge(3, 1, 68);
+
+		
+		System.out.println(graph.getNumOfVertices());
+		System.out.println(graph.getNumOfEdges());
+	}
+}

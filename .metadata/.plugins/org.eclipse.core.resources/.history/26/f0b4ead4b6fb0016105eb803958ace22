@@ -1,0 +1,12 @@
+
+public class Test {
+	public static void main(String[] args){
+		MyGraph graph=new MyGraph();
+		graph.insertVertex("WA");
+		graph.insertVertex("NY");
+		graph.insertVertex("DC");
+		graph.insertVertex("CA");
+		
+		
+	}
+}

@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class MyGraph {
+	ArrayList<String> vertices=new ArrayList<>();
+	int[][] edges;
+	
+	public MyGraph(){
+		
+	}
+	
+	public MyGraph(int N){
+		edges=new int[N][N];
+	}
+	
+	public void insertVertex(String vertex){
+		
+	}
+}
