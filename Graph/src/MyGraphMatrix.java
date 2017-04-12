@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class MyGraph {
+public class MyGraphMatrix {
 	ArrayList<String> vertices;
 	int[][] edges;
 	
-	public MyGraph(int N){
+	public MyGraphMatrix(int N){
 		vertices=new ArrayList<String>();
 		edges=new int[N][N];
 	}

@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class CommonMethod {
+	public UndirectedGraphNode cloneGraph(UndirectedGraphNode startingNode){
+		
+		return null;
+	}
+}
+class UndirectedGraphNode{
+	int label;
+	List<UndirectedGraphNode> neighbors;
+	
+	UndirectedGraphNode(int label){
+		this.label=label;
+		neighbors=new ArrayList<>();
+	}
+}

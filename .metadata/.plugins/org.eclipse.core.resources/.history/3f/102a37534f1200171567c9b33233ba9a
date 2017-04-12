@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class MyGraphList {
+	public Node[] arr;
+	public MyGraphList(int N){
+		arr=new Node[N];
+	}	
+}
+class Node{
+	int val;
+	Node[] child;
+	
+	Node(int val,int N){
+		this.val=val;
+		child=new Node[N];
+	}
+}

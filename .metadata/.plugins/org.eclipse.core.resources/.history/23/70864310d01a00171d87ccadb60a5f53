@@ -1,0 +1,15 @@
+import java.util.*;
+
+public class CommonMethod {
+	public List<Integer> inOrder(TreeNode root){
+		List<Integer> res=new ArrayList<>();
+		
+		inOrder(root,res);
+		
+		return res;
+	}
+	
+	public void inOrder(TreeNode root,List<Integer> res){
+		
+	}
+}

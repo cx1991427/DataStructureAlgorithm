@@ -1,0 +1,24 @@
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class Test extends Thread{
+	public static void main(String[] args){
+		List<List<Integer>> res =new ArrayList<List<Integer>>();
+		ArrayList<Integer> item1=new ArrayList<>();
+		item1.add(2);
+		res.add(item1);
+		
+		List<Integer> item2=new ArrayList<>();
+		item2.add(3);
+		item2.add(4);
+		
+		
+		
+			System.out.println(res.size());
+	}
+}
+
+
+
+

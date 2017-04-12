@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 elements to &apos;JavaThreadedNetworkProgramming/src&apos;&#x0D;&#x0A;- Original project: &apos;Test&apos;&#x0D;&#x0A;- Destination element: &apos;JavaThreadedNetworkProgramming/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Server.java&#x0D;&#x0A;     Client3.java&#x0D;&#x0A;     Client2.java&#x0D;&#x0A;     ServerThread.java&#x0D;&#x0A;     Client.java" description="Copy compilation units" destination="=JavaThreadedNetworkProgramming/src" element1="/src&lt;{Server.java" element2="/src&lt;{Client3.java" element3="/src&lt;{Client2.java" element4="/src&lt;{ServerThread.java" element5="/src&lt;{Client.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1490217970785" units="5" version="1.0"/>
+</session>

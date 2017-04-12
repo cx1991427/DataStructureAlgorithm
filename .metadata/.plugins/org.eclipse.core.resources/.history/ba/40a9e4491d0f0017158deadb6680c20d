@@ -1,0 +1,11 @@
+import java.net.*;
+
+public class Test extends Thread{
+	public static void main(String[] args){
+		Socket client=new Socket("xiang",8080);
+	}
+}
+
+
+
+

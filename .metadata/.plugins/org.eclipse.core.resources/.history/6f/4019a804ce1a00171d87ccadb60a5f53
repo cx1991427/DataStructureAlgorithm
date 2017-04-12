@@ -1,0 +1,7 @@
+import java.util.*;
+
+public class CommonMethod {
+	public List<Integer> inOrder(TreeNode root){
+		
+	}
+}

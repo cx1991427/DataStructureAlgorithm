@@ -1,0 +1,25 @@
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class Test extends Thread{
+	
+	public static void main(String[] args){
+		
+		int N=5;
+		int[][] arr=new int[N][];
+
+		String str="ABCabc";
+		str.toLowerCase();
+		
+		Ssytem.out.println(str);
+		
+		
+		
+	}
+}
+
+
+
+
+

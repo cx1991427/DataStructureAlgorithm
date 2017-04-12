@@ -1,0 +1,36 @@
+
+public class MyLinkedList {
+	//1: inner class
+	public static class ListNode{
+		int val;
+		ListNode next;
+		
+		public ListNode(int x){
+			this.val=x;
+		}		
+	}
+	
+	//2: instance variable
+	public int size;
+	public ListNode dummy;
+	
+	//3: constructor
+	public MyLinkedList(){
+		size=0;
+		dummy=new ListNode(-1);
+	}
+	
+	public void add(){
+		
+	}
+	
+	public void remove(){
+		
+	}
+	
+	public void add(int index,int val){
+		
+	}
+	
+	
+}

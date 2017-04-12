@@ -1,0 +1,39 @@
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class Test extends Thread{
+	public static void main(String[] args){
+		List<List<Integer>> res =new ArrayList<List<Integer>>();
+		ArrayList<Integer> item1=new ArrayList<>();
+		item1.add(2);
+		res.add(item1);
+		
+		List<Integer> item2=new ArrayList<>();
+		item2.add(3);
+		item2.add(4);
+		res.add(item2);
+		
+		List<Integer> item3=new ArrayList<>();
+		item3.add(6);
+		item3.add(5);
+		item3.add(7);
+		res.add(item3);
+		
+		List<String> wordDict=new ArrayList<>();
+		wordDict.add("leet");
+		wordDict.add("code");
+		System.out.println(wordDict.contains("leet"));
+		
+		int[] nums={1,9,4,2,7};
+		Solution s=new Solution();
+		
+		int a=10;
+				
+		System.out.println(-a);
+	}
+}
+
+
+
+

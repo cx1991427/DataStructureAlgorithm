@@ -1,25 +1,41 @@
+import java.util.HashMap;
+import java.util.List;
 
 public class Test {
 	public static void main(String[] args){
-//		String[] names={"WA","NY","DC","CA"};
-		MyGraph graph=new MyGraph(4);
-		graph.insertVertex("WA");
-		graph.insertVertex("NY");
-		graph.insertVertex("DC");
-		graph.insertVertex("CA");
+		UndirectedGraphNode root=new UndirectedGraphNode(0);
+		UndirectedGraphNode node1=new UndirectedGraphNode(1);
 		
-		graph.insertEdge(0, 3, 98);
-		graph.insertEdge(1, 0, 15);
-		graph.insertEdge(1, 2, 37);
-		graph.insertEdge(3, 2, 68);
+		UndirectedGraphNode node2=new UndirectedGraphNode(2);
+		UndirectedGraphNode node3=new UndirectedGraphNode(3);
 		
-//		graph.insertEdge(3, 1, 68);
-		System.out.println(graph.getNumOfEdges());
+		root.neighbors.add(node1);
+		root.neighbors.add(node3);
 		
-		graph.deleteEdge(3,2);
-
+		node1.neighbors.add(root);
+		node1.neighbors.add(node2);
 		
-		System.out.println(graph.getNumOfVertices());
-		System.out.println(graph.getNumOfEdges());
+		node2.neighbors.add(node1);
+		node2.neighbors.add(node3);
+		
+		node3.neighbors.add(root);
+		node3.neighbors.add(node2);
+		
+		
+		CommonMethod cm=new CommonMethod();
+		
+		List <UndirectedGraphNode> res=cm.dfs(root);
+		System.out.println(cm.dfs(root).size());
+		
+		for(UndirectedGraphNode node:res){
+			System.out.println(node.label);
+		}
+		
+		List<UndirectedGraphNode> res2=cm.bfs(root);
+		for(UndirectedGraphNode node:res2){
+			System.out.println(node.label);
+		}
+		
+		
 	}
 }

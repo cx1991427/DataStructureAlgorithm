@@ -1,0 +1,14 @@
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class Test extends Thread{
+	public static void main(String[] args){
+		LinkedList<Integer>[] arr=(LinkedList<Integer>) new LinkedList[5];
+		arr[0]=new LinkedList<>();
+	}
+}
+
+
+
+

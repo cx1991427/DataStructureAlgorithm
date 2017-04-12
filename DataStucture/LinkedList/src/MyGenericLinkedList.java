@@ -1,5 +1,5 @@
 
-public class MyLinkedList<T> {
+public class MyGenericLinkedList<T> {
 	
 	public static class ListNode<T>{
 		public T val;
@@ -15,6 +15,4 @@ public class MyLinkedList<T> {
 			this.next=next;
 		}
 	}
-	
-	public ListNode<T> dummyHead;
 }

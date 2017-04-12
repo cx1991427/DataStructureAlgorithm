@@ -1,0 +1,26 @@
+import java.util.*;
+
+
+public class Solution {
+	public List<String> generateParenthesis(int n) {
+	    List<String> res = new LinkedList<>();
+	    helper(res, 0, n, n, new StringBuilder());
+	    return res;
+	}
+
+	public void helper(List<String> res, int left, int right, int n, StringBuilder temp) {
+	    // Base case;
+	    if(left == n && right == n) {
+	        res.add(temp.toString());
+	    }
+	    if(left < n) {
+	        // 限制在当前这么多左括号的情况下，最多只能出现那么多的右括号。
+	        helper(res, left + 1, right - 1, n, temp.append("("));
+	        temp.deleteCharAt(temp.length() - 1);
+	    }
+	    if(right < n) {
+	        helper(res, left, right + 1, n, temp.append(")"));
+	        temp.deleteCharAt(temp.length() - 1);
+	    }
+	}
+}

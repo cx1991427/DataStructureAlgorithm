@@ -1,0 +1,12 @@
+
+public class Test {
+	public static void main(String[] args){
+		Node node0=new Node(0,5);
+		Node node1=new Node(0,5);
+		Node node5=new Node(0,3);
+		
+		node0.child[0]=node1;
+		
+		
+	}
+}

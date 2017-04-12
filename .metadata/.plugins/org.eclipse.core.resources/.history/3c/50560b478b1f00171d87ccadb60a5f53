@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class CommonMethod {
+	public GraphNode cloneGraph(GraphNode startingNode){
+		
+		return null;
+	}
+}
+class GraphNode{
+	int label;
+	List<GraphNode> neighbors;
+	
+	GraphNode(int label){
+		this.label=label;
+		neighbors=new ArrayList<>();
+	}
+}

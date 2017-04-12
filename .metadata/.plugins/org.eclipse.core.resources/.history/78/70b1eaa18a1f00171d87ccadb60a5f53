@@ -1,0 +1,8 @@
+
+public class CommonMethod {
+	
+}
+class GraphNode{
+	int label;
+	List<GraphNode> list;
+}

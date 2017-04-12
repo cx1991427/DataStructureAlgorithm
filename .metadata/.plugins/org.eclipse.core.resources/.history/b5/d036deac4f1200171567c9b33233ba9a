@@ -1,0 +1,5 @@
+
+public class MyGraphList {
+	public MyLinkedList[] arr;
+	
+}

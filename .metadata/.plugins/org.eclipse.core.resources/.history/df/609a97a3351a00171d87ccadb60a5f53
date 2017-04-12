@@ -1,0 +1,32 @@
+
+public class Tree<T> {
+	private static class TreeNode<T>{
+		T val;
+		TreeNode<T> left;
+		TreeNode<T> right;
+		
+		TreeNode(T x){
+			this.val=x;
+		}
+	}
+	
+	private TreeNode<T> root;
+	
+	public Tree(){
+		root=null;
+	}
+	
+	public Tree(T x){
+		root=new TreeNode<T>(x);
+	}
+	
+	public boolean contains(T x){
+		
+		return true;
+	}
+	
+	public boolean contains(TreeNode<T> node, T x){
+		
+		return true;
+	}
+}

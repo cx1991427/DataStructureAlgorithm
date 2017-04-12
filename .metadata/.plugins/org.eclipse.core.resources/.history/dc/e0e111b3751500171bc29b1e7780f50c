@@ -1,0 +1,26 @@
+public class Solution {
+    public int maxProduct(int[] nums) {
+        // http://blog.csdn.net/linhuanmars/article/details/39537283
+        int preMax=nums[0];
+        int preMin=nums[0];
+        
+        int max=nums[0];
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]>0){
+               max=Math.max(Math.max(nums[i],preMax*nums[i]),max);
+               
+               preMax=Math.max(preMax*nums[i],nums[i]);
+               preMin=Math.min(preMin*nums[i],nums[i]);
+               
+            }
+            else{
+                max=Math.max(Math.max(nums[i],nums[i]*preMin),max);
+                
+                preMax=Math.max(nums[i],preMin*nums[i]);
+                preMin=Math.min(nums[i],preMax*nums[i]);
+            }
+        }
+        
+        return max;
+    }
+}

@@ -1,0 +1,16 @@
+
+public class Test {
+	public static void main(String[] args){
+		UndirectedGraphNode root=new UndirectedGraphNode(0);
+		UndirectedGraphNode node1=new UndirectedGraphNode(1);
+		
+		UndirectedGraphNode node2=new UndirectedGraphNode(2);
+		UndirectedGraphNode node3=new UndirectedGraphNode(3);
+		
+		root.neighbors.add(node1);
+		root.neighbors.add(node3);
+		
+		node1.neighbors.add(node2);
+		
+	}
+}

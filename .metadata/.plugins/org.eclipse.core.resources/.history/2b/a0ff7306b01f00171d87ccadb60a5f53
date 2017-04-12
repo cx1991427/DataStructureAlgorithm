@@ -1,0 +1,7 @@
+
+public class MyArray {
+	public static void main(String[] args){
+		int[] arr={1,2,3};
+		Array.sort(arr);
+	}
+}

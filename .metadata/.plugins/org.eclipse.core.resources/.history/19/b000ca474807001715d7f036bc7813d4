@@ -1,0 +1,38 @@
+import java.util.*;
+
+
+public class Solution {
+	public List<String> generateParenthesis(int n) {
+	    List<String> res = new LinkedList<>();
+	    StringBuilder sb=new StringBuilder();
+	    helper(0,0,n, sb,res);
+	    return res;
+	}
+	
+	public void helper(int l, int r, int n, StringBuilder sb, List<String> res){
+		if(l==n&&r==n){
+			res.add(sb.toString());
+		}
+		
+		sb.append("(");
+		
+		sb.append("")
+	}
+	
+
+//	public void helper(List<String> res, int left, int right, int n, StringBuilder temp) {
+//	    // Base case;
+//	    if(left == n && right == n) {
+//	        res.add(temp.toString());
+//	    }
+//	    if(left < n) {
+//	        // 限制在当前这么多左括号的情况下，最多只能出现那么多的右括号。
+//	        helper(res, left + 1, right - 1, n, temp.append("("));
+//	        temp.deleteCharAt(temp.length() - 1);
+//	    }
+//	    if(right < n) {
+//	        helper(res, left, right + 1, n, temp.append(")"));
+//	        temp.deleteCharAt(temp.length() - 1);
+//	    }
+//	}
+}

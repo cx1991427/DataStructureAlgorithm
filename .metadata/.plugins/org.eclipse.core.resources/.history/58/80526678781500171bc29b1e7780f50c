@@ -1,0 +1,22 @@
+public class Solution {
+    // http://www.qiujiawei.com/leetcode-problem-198/
+     
+    public int rob(int[] nums) {
+        int sum=0;
+        int max=0;
+        
+       
+        return  helper(0,nums,sum,max);
+    }
+    
+    public int  helper(int start,int[] nums,int sum,int max){
+        for(int i=start;i<nums.length;i++){
+                sum+=nums[i];
+                if(sum>max){
+                	max=sum;
+                }
+                helper(i+2,nums,sum,max);
+                sum-=nums[i];
+        }
+    }
+}

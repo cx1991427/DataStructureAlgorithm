@@ -1,0 +1,61 @@
+import java.util.*;
+
+public class Test {
+	public static void main(String[] args){
+		
+//		ListNode n1=new ListNode(11);
+//		ListNode n2=new ListNode(22);
+//		ListNode n3=new ListNode(33);
+//		ListNode n4=new ListNode(44);
+//		ListNode n5=new ListNode(55);
+//		
+//		n1.next=n2;
+//		n2.next=n3;
+//		n3.next=n4;
+//		n4.next=n5;
+		
+//		TreeNode node0=new TreeNode(11);
+//		TreeNode node1=new TreeNode(22);
+//		TreeNode node2=new TreeNode(33);
+//		TreeNode node3=new TreeNode(44);
+//		TreeNode node4=new TreeNode(55);
+//		
+//		node0.left=node1;
+//		node0.right=node2;
+//		node1.left=node3;
+//		node1.right=node4;	
+		
+		CustProd ct=new CustProd("Joey","bread");
+		CustProd ct2=new CustProd("Angela","milk");
+		CustProd ct3=new CustProd("Bngela","milk");
+		CustProd ct4=new CustProd("Joey","BREAD");
+		
+		Employee e1=new Employee(1200,"xiang");
+		Employee e2=new Employee(1200,"XIANG");
+
+		CustProd[] arr=new CustProd[3];
+		arr[0]=ct;
+		arr[1]=ct2;
+		arr[2]=ct3;
+		
+		Arrays.sort(arr,new Comparator<CustProd>(){
+			public int compare(CustProd ct1,CustProd ct2){
+				return ct1.cust.charAt(0)-ct2.cust.charAt(0);
+			}
+		});
+		
+		System.out.println(arr[1].cust);	
+		
+		HashMap<Employee,String> hm=new HashMap<>();
+//		hm.put(ct, "first");
+//		hm.put(ct2, "second");
+//		hm.put(ct3, "third");
+//		hm.put(ct4, "2");
+		
+		Solution s=new Solution();
+		
+		
+		System.out.println(s.generateParenthesis(3));
+	}
+}
+

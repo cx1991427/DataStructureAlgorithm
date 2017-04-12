@@ -1,0 +1,14 @@
+import java.util.*;
+
+public class MyGraphList {
+	ArrayList<ListNode> list;
+	
+	public MyGraphList(){
+		list=new ArrayList<>();
+	}
+	
+	
+}
+class ListNode{
+	
+}

@@ -1,6 +1,27 @@
+
 public class MyHashMap<K,V>{
-  private int N=101;
-  private Entry<K,V>[] arr;
+	public static class ListNode<K,V>{
+		K key;
+		V value;
+		ListNode<K,V> next;
+		
+		public ListNode(K key,V value){
+			this.key=key;
+			this.value=value;
+			this.next=null;
+		}
+	}
+	
+	ListNode<K,V>[] arr;
+	
+	public MyHashMap(){
+		arr=new ListNode[11];	//why not ListNode<K,V>[11];
+	}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+}
+
+/*public class MyHashMap<K,V>{
+  private int N=1
+  private ListNode<K,V>[] arr;
   
   class Entry<K,V>{
 	  private K key;
@@ -63,3 +84,4 @@ public class MyHashMap<K,V>{
   
 }
 
+*/

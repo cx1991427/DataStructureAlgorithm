@@ -1,0 +1,14 @@
+
+public class GenericBST<T> {
+	public static class TreeNode<T>{
+		T val;
+		TreeNode<T> left;
+		TreeNode<T> right;
+	}
+	
+	public TreeNode<T> root;
+	
+	public GenericBST(T x){
+		root=new TreeNode(x);
+	}
+}

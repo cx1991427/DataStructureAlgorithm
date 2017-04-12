@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;MyLinkedList&apos; to &apos;MyGenericLinkedList&apos;&#x0D;&#x0A;- Original project: &apos;LinkedList&apos;&#x0D;&#x0A;- Original element: &apos;MyLinkedList&apos;&#x0D;&#x0A;- Renamed element: &apos;MyGenericLinkedList&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MyLinkedList&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{MyLinkedList.java[MyLinkedList" matchStrategy="1" name="MyGenericLinkedList" qualified="false" references="true" similarDeclarations="false" stamp="1488748960248" textual="false" version="1.0"/>
+</session>

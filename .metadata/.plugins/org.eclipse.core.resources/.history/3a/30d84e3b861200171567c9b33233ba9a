@@ -1,0 +1,15 @@
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class Test extends Thread{
+	public static void main(String[] args){
+		char[][] board={{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+			Solution s=new Solution();
+			s.exist(board, word);
+	}
+}
+
+
+
+

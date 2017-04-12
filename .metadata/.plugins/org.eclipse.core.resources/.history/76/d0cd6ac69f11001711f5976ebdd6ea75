@@ -1,0 +1,11 @@
+import java.util.*;
+
+public class MyGraphList {
+	public Node[] arr;
+	public MyGraphList(){
+		
+	}	
+}
+class Node{
+	
+}
