@@ -1,7 +1,0 @@
-
-public class BalancedSymbols {
-	public boolean isBalanced(String str){
-		
-		return true;
-	}
-}
