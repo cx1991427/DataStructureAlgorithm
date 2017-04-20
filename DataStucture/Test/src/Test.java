@@ -6,34 +6,31 @@ public class Test extends Thread{
 	
 	public static void main(String[] args){
 		
-		int N=5;
-		int[][] arr=new int[N][];
-
-		String str="ABCabc";
-		String str2=str.toLowerCase();
+		RandomListNode node1=new RandomListNode(1);
+		RandomListNode node2=new RandomListNode(2);
+		RandomListNode node3=new RandomListNode(3);
+		RandomListNode node4=new RandomListNode(4);
 		
-		System.out.println(str2);
+		RandomListNode duplicate1=new RandomListNode(node1.label);
 		
-		List<Integer>  list=new ArrayList<>();
-		list.add(1);;
-		list.add(2);
+		RandomListNode[] arr2=new RandomListNode[3];
+		arr2[0]=node1;
+		arr2[1]=node2;
+		arr2[2]=node3;
+	
+		PriorityQueue<ListNode> pq=new PriorityQueue<>(new Comparator<ListNode>(){
+			public int compare(ListNode n1,ListNode n2){
+				return n1.val-n2.val;
+			}
+		});
 		
-		List<Integer>  list2=new ArrayList<>(list);
-		list2.add(3);
-		
-//		list.remove(2);
-		
-		System.out.println(list2.size());
-		
-		int[]  arr1=new int[5];
-		
-		
-		System.out.println(arr1.length);
-				
-		System.out.println(arr1[0]);
-		
+		Scanner scanner=new Scanner(System.in);
+//		int i=scanner.nextInt();
+		String str=scanner.nextLine();
+		System.out.println(str);
 	}
 }
+
 
 
 

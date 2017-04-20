@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;BST.remove(...)&apos; to &apos;delete&apos;&#x0D;&#x0A;- Original project: &apos;Tree&apos;&#x0D;&#x0A;- Original element: &apos;BST.remove(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;BST.delete(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;remove&apos;" flags="589826" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;{BST.java[BST~remove~I~QTreeNode;" name="delete" references="true" stamp="1492710523513" version="1.0"/>
+</session>

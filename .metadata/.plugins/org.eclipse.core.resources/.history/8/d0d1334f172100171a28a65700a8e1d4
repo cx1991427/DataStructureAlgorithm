@@ -1,0 +1,8 @@
+
+public class BT {
+	private static class  TreeNode{
+		int val;
+		TreeNode left;
+		TreeNode right;
+	}
+}

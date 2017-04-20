@@ -1,0 +1,22 @@
+
+public class GenericBST<T extends Comparable<? super T>> {
+	//1: inner class:
+	public static class TreeNode<T>{
+		T val;
+		TreeNode<T> left,right;
+		
+		public TreeNode(T val){
+			this.val=val;
+		}		
+	}
+	//2:attribute:
+	public TreeNode<T> root;
+	
+	public GenericBST(T val){
+		root=new TreeNode<>(val);
+	}
+	
+	
+	
+	
+}

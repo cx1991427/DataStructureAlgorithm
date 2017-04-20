@@ -1,0 +1,42 @@
+import java.io.*;
+
+public class Test {
+	public static void main(String[] args){
+		BalancedSymbols bb=new BalancedSymbols();
+		
+		MyStack stack=new MyStack();
+		stack.push(2);
+		stack.push(3);
+		stack.push(5);
+		
+		stack.push(2);
+		stack.push(3);
+		stack.push(5);
+		
+		
+		while(!stack.isEmpty()){
+			System.out.println(stack.peek());
+			stack.pop();
+		}
+		
+		try(BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
+		    StringBuilder sb = new StringBuilder();
+		    String line = br.readLine();
+
+		    while (line != null) {
+		        sb.append(line);
+		        sb.append(System.lineSeparator());
+		        line = br.readLine();
+		    }
+		    String everything = sb.toString();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(	bb.isBalanced("((())}"));
+	}
+}

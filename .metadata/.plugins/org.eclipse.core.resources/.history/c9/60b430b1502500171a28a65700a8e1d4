@@ -1,0 +1,39 @@
+import java.util.Iterator;
+
+public class MyArrayList<T> implements Iterable<T> {
+	int size;
+	T[] arr;
+	
+	public MyArrayList(){
+		this.size=0;
+		arr=(T[])new Object[11];
+	}
+	
+	public int size(){
+		return this.size;
+	}
+	
+	
+	@Override
+	public Iterator<T> iterator() {
+		// TODO Auto-generated method stub
+		return (Iterator<T>) new ArrayListIterator();
+	}
+	
+}
+class ArrayListIterator<T> implements Iterator<T>{
+
+	@Override
+	public boolean hasNext() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public T next() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
+

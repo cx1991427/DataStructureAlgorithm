@@ -1,0 +1,17 @@
+import java.util.Iterator;
+
+public class MyArrayList<T> implements Iterable<T> {
+	int size;
+	T[] arr;
+	
+	
+	
+	
+	@Override
+	public Iterator<T> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
+

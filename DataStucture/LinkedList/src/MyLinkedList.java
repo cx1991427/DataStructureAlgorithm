@@ -1,5 +1,32 @@
+import java.util.Iterator;
 
-public class MyLinkedList {
+public class MyLinkedList<T> implements Iterable<T> {
+	
+	public static class ListNode<T>{
+		public T val;
+		public ListNode<T> next;
+		
+		public ListNode(){	//public ListNode<T>(){}
+			this.val=null;
+			this.next=null;
+		}
+		
+		public ListNode(T val, ListNode<T> next){
+			this.val=val;
+			this.next=next;
+		}
+	}
+
+	@Override
+	public Iterator<T> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
+
+
+
+/*public class MyLinkedList {
 	//1: inner class
 	public static class ListNode{
 		int val;
@@ -23,8 +50,7 @@ public class MyLinkedList {
 	}
 	
 	public void add(int val){
-		ListNode temp=new ListNode(val);
-		cur.next=temp;
+		cur.next=new ListNode(val);
 		cur=cur.next;
 		
 		size++;
@@ -35,14 +61,5 @@ public class MyLinkedList {
 		
 		size--;
 	}
-	
-	public void add(int index,int val){
-		ListNode temp=new ListNode(val);
-		temp.next=dummy.next;
-		dummy.next=temp;
 		
-		size++;
-	}
-	
-	
-}
+}*/

@@ -1,0 +1,81 @@
+
+public class BST {		//class BST<T extends Comparable<T> >
+	//1: 
+
+	
+	//2:
+	public TreeNode root;
+	
+	//3:
+	public BST(){
+		root=null;
+	}
+	
+	public BST(int val){
+		root=new TreeNode(val);
+	}
+	
+	//4:	
+	public void insert(int x){
+		
+	}
+	
+	public boolean contains(int x){
+		return false;
+	}
+	
+	public int findMin(){
+		return -1;
+	}
+	
+	public int findMax(){
+		return 1;
+	}
+	
+	public void remove(int x){
+		
+	}
+	
+	
+	public boolean contains(int x,TreeNode node){
+		if(node==null){
+			return false;
+		}
+		
+		if(x>node.val){
+			return contains(x,node.right);
+		}
+		else if(x==node.val){
+			return true;
+		}
+		else{
+			return contains(x,node.left);
+		}
+	}
+	
+	public TreeNode findMin(TreeNode node){
+		if(node==null){
+			return null;
+		}
+		
+		if(node.left==null){
+			return node;
+		}
+		
+		return findMin(node.left);
+	}
+	
+	public TreeNode findMax(TreeNode node){
+		if(node==null){
+			return null;
+		}
+		if(node.right==null){
+			return node;
+		}
+		while(node.right!=null){
+			node=node.right;
+		}
+		return node;
+		
+	}	
+}

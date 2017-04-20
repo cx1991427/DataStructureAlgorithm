@@ -1,0 +1,35 @@
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class Test extends Thread{
+	
+	public static void main(String[] args){
+		
+		RandomListNode node1=new RandomListNode(1);
+		RandomListNode node2=new RandomListNode(2);
+		RandomListNode node3=new RandomListNode(3);
+		RandomListNode node4=new RandomListNode(4);
+		
+		RandomListNode duplicate1=new RandomListNode(node1.label);
+		
+		RandomListNode[] arr2=new RandomListNode[3];
+		arr2[0]=node1;
+		arr2[1]=node2;
+		arr2[2]=node3;
+	
+		PriorityQueue<Integer> pq=new PriorityQueue<>(new Comparator<ListNode>(){
+			public int compare(ListNode n1,ListNode n2){
+				return 0;
+			}
+		});
+		
+		
+	}
+}
+
+
+
+
+
+

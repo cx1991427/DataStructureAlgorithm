@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 public class CommonMethod {
 	//1:preOrder:
 	public List<Integer> preOrder(TreeNode root){
@@ -35,6 +34,47 @@ public class CommonMethod {
 	}
 	
 	//3:postOrder:
+	public List<TreeNode> postOrder(TreeNode root){
+		List<TreeNode> list=new ArrayList<>();
+		postOrder(root,list);
+		return list;
+	}
+	private void postOrder(TreeNode root, List<TreeNode> list){
+		
+	}
+	
+	//levelOrder:
+	public List<TreeNode> levelOrder(TreeNode root){
+		List<TreeNode> list=new ArrayList<>();
+		levelOrder(root,list);
+		return list;
+	}
+	private void levelOrder(TreeNode root,List<TreeNode> list){
+		Queue<TreeNode> queue=new LinkedList<>();
+		queue.offer(root);
+		queue.offer(null);
+		
+		while(!queue.isEmpty()){
+			TreeNode node=queue.poll();
+			if(node==null){
+				if(queue.size()==0){
+					break;
+				}
+				else{
+					queue.offer(null);
+				}
+			}
+			else{
+				if(node.left!=null){
+					queue.offer(node.left);
+				}
+				if(node.right!=null){
+					queue.offer(node.right);
+				}
+				list.add(node);
+			}
+		}
+	}
 	
 	//4:binaryTreePath:
 	public List<List<Integer>> binaryTreePath(TreeNode root){
@@ -91,8 +131,13 @@ public class CommonMethod {
 			return binarySearch(root.left,key);
 		}
 	}
-	
+	//7:deleteNode
 	public TreeNode deleteNode(TreeNode root,int key){
+		
+		if(root==null){
+			return null;
+		}
+		
 		if(root.val==key){
 			if(root.left==null && root.right==null){
 				return null;
@@ -119,7 +164,7 @@ public class CommonMethod {
 			return root;
 		}		
 	}
-	
+	//8:findMin
 	public TreeNode findMin(TreeNode root){
 		TreeNode node=root;
 		while(node.left!=null){
@@ -127,20 +172,4 @@ public class CommonMethod {
 		}
 		return node;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
