@@ -42,6 +42,7 @@ public class WeightedQuickUnionUF {
 	
 	private int ancestor(int i){
 		while(i!=arr[i]){
+			arr[i]=arr[arr[i]];//can be omitted: path compression
 			i=arr[i];
 		}
 		return i;

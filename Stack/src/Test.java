@@ -21,9 +21,13 @@ public class Test {
 		}
 		
 		 Scanner scanner=new Scanner(System.in);
-		    System.out.println("input:");
+		    System.out.println("input string:");
 		    String str=scanner.nextLine();
-		    System.out.println(str);
+		    
+		    System.out.println("input integer:");
+		    int i=scanner.nextInt();
+		    
+		    System.out.println(str+i);
 		
 	    try{
 	    	BufferedReader br = new BufferedReader(new FileReader("test.txt"));
