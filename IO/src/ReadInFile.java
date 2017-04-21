@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class ReadInFile {
 	public static void main(String[] args){
-		//1: Scanner, read from console
+//		1: Scanner, read from console
+		
 		 Scanner scanner=new Scanner(System.in);
 		 
 		 //(1)read string
@@ -19,17 +20,21 @@ public class ReadInFile {
 		
 		    
 		    
-		//2:BufferedReader, read from file
+//		2:BufferedReader, read integer from file
 	    try{
 	    	BufferedReader br = new BufferedReader(new FileReader("test.txt"));
 			String line = br.readLine();
 			
 		    while (line != null) {
 		    	System.out.println(line);
+		    	String[] arr=line.split(" ");
+		    	System.out.println(Integer.parseInt(arr[0]));
+		    	
 		        line = br.readLine();
 		    }
 	    }catch(Exception e){
 	    	System.out.println(e);
 	    }
+	    
 	}
 }
