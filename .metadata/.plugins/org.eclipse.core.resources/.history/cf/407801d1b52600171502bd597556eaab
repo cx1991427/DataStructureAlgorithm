@@ -1,0 +1,7 @@
+
+public class WeightedQuickUnionUF {
+	private int[] arr;
+	public WeightedQuickUnionUF(){
+		
+	}
+}
