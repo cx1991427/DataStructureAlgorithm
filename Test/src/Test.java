@@ -28,6 +28,13 @@ public class Test extends Thread{
 //		int i=scanner.nextInt();
 		String str=scanner.nextLine();
 		System.out.println(str);
+		
+		char[][] board=new char[3][];
+		board[0]=new char[2];
+		board[1]=new char[3];
+		board[2]=new char[4];
+		
+		
 	}
 }
 

@@ -35,6 +35,5 @@ public class ReadInFile {
 	    }catch(Exception e){
 	    	System.out.println(e);
 	    }
-	    
 	}
 }
