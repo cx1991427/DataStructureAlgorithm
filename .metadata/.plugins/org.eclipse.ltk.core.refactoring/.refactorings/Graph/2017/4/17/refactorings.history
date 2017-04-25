@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;node&apos; in &apos;CommonMethod.bfs(...)&apos; to &apos;root&apos;&#x0D;&#x0A;- Original project: &apos;Graph&apos;&#x0D;&#x0A;- Original element: &apos;CommonMethod.bfs(GraphNode).node&apos;&#x0D;&#x0A;- Renamed element: &apos;node&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;node&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{CommonMethod.java[CommonMethod~bfs~QGraphNode;@node!1467!1480!1477!1480!QGraphNode;!0!true" name="root" references="true" stamp="1493082225410" version="1.0"/>
+</session>

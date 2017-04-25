@@ -2,63 +2,49 @@ import java.util.*;
 
 public class CommonMethod {
 	//1:cloneGraph
-	public UndirectedGraphNode cloneGraph(UndirectedGraphNode startingNode){
+	public GraphNode cloneGraph(GraphNode startingNode){
 		
 		return null;
 	}
-	
-	//2:dfs
-	public List<UndirectedGraphNode> dfs(UndirectedGraphNode root){
-		List<UndirectedGraphNode> list=new ArrayList<>();
-		HashMap<Integer,UndirectedGraphNode> visited=new HashMap<>();
 		
-		dfs(root,list,visited);		
+	//2: dfs with different function signature
+	public HashMap<Integer,GraphNode> dfs(GraphNode root){
+		HashMap<Integer,GraphNode> hm=new HashMap<>();
 		
-		return list;
+		dfs(root,hm);
+		
+		return hm;
 	}
-	private void dfs(UndirectedGraphNode node,List<UndirectedGraphNode> list,HashMap<Integer,UndirectedGraphNode> visited){
-		list.add(node);
-		visited.put(node.label, node);
+	public void dfs(GraphNode root,HashMap<Integer,GraphNode> hm){
+		hm.put(root.label, root);
 		
-		for(UndirectedGraphNode neighbor:node.neighbors){
-			if(!visited.containsKey(neighbor.label)){
-				dfs(neighbor,list,visited);
+		for(GraphNode neighbor:root.neighbors){
+			if(!hm.containsKey(neighbor.label)){
+				//hm.put(neighbor.label, neighbor);
+				dfs(neighbor,hm);
 			}
 		}
 	}
 	
-	//3:bfs
-	public List<UndirectedGraphNode> bfs(UndirectedGraphNode root){
-		List<UndirectedGraphNode> list=new ArrayList<>();
+	
+	//3:bfs with different function signature
+	public HashMap<Integer,GraphNode> bfs(GraphNode root){
+		HashMap<Integer,GraphNode> hm=new HashMap<>();
+		Queue<GraphNode> queue=new LinkedList<>();
 		
-		Queue<UndirectedGraphNode> queue=new LinkedList<>();
-		HashMap<Integer,UndirectedGraphNode> hm=new HashMap<>();
 		queue.offer(root);
-		
-		list.add(root);
 		hm.put(root.label, root);
-		
 		while(!queue.isEmpty()){
-			UndirectedGraphNode node=queue.poll();
-			for(UndirectedGraphNode neighbor:node.neighbors){
+			GraphNode node=queue.poll();
+			
+			for(GraphNode neighbor:node.neighbors){
 				if(!hm.containsKey(neighbor.label)){
 					queue.offer(neighbor);
-					list.add(neighbor);
-					hm.put(neighbor.label,neighbor);
+					hm.put(neighbor.label, neighbor);
 				}
 			}
 		}
-		
-		return list;
+		return hm;
 	}
 }
 
-class UndirectedGraphNode{
-	int label;
-	List<UndirectedGraphNode> neighbors;
-	
-	UndirectedGraphNode(int label){
-		this.label=label;
-		neighbors=new ArrayList<>();
-	}
-}

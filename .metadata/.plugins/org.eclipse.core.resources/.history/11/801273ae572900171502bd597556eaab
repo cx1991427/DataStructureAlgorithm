@@ -1,0 +1,47 @@
+import java.util.*;
+
+public class CommonMethod {
+	//1:cloneGraph
+	public UndirectedGraphNode cloneGraph(UndirectedGraphNode startingNode){
+		
+		return null;
+	}
+		
+	//2: dfs with different function signature
+	public HashMap<Integer,GraphNode> dfs(GraphNode root){
+		HashMap<Integer,GraphNode> hm=new HashMap<>();
+		
+		dfs(root,hm);
+		
+		return hm;
+	}
+	public void dfs(GraphNode root,HashMap<Integer,GraphNode> hm){
+		hm.put(root.label, root);
+		for(GraphNode neighbor:root.neighbors){
+			if(!hm.containsKey(neighbor.label)){
+				hm.put(neighbor.label, neighbor);
+			}
+		}
+	}
+	
+	
+	//3:bfs with different function signature
+	public HashMap<Integer,GraphNode> bfs(GraphNode root){
+		HashMap<Integer,GraphNode> hm=new HashMap<>();
+		Queue<GraphNode> queue=new LinkedList<>();
+		
+		queue.offer(root);
+		hm.put(root.label, root);
+		while(!queue.isEmpty()){
+			GraphNode node=queue.poll();
+			for(GraphNode neighbor:node.neighbors){
+				if(!hm.containsKey(neighbor.label)){
+					queue.offer(neighbor);
+					hm.put(neighbor.label, neighbor);
+				}
+			}
+		}
+		return hm;
+	}
+}
+
