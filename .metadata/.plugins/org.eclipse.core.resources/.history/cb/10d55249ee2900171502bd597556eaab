@@ -1,0 +1,135 @@
+package PG;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.*;
+/**
+ * Write your solution in this file.
+ *
+ * You can build, execute, and test your answer by either pressing 'Try Answer' in the side panel,
+ * or by running the following commands on the command line:
+ *
+ * To build your answer:
+ *            gradle build
+ * To run the previously built executable:
+ *            gradle run -q -P "appArgs='<test_case_path>'"
+ * For example:
+ *            gradle run -q -P "appArgs='tests/input_1.json'"
+ *
+ * You can organize your code as you wish (eg, use auxiliary files) as long as `TestAnswer`
+ * produces the expected output.
+ */
+
+public class Answer {
+
+    /**
+     * Implement your solution here.
+     *
+     * @param boggle_board Representation of a boggle board.
+     * @param list_path Path to a .txt file containing the list of valid words to consider
+     * @return List of valid words found in the given boggle board.
+     */
+    public static String[] find_words(String[] boggle_board, String list_path) {
+        
+    	List<String> list=new ArrayList<>();
+    	 try{
+ 	    	BufferedReader br = new BufferedReader(new FileReader(list_path));
+ 			String line = br.readLine();
+ 			
+ 		    while (line != null) {
+ 		    	list.add(line);
+ 		    	
+ 		        line = br.readLine();
+ 		    }
+ 	    }catch(Exception e){
+ 	    	System.out.println(e);
+ 	    }
+    	 
+    	 char[][] board=new char[boggle_board.length][boggle_board[0].length()];
+    	 for(int i=0;i<boggle_board.length;i++){
+    		 for(int j=0;j<boggle_board[0].length();j++){
+    			 board[i][j]=boggle_board[i].charAt(j);
+    		 }
+    	 }
+    	 
+    	 TrieNode root=buildTrie(list);
+    	 List<String> res=new ArrayList<>();
+    	for(int i=0;i<board.length;i++){
+    		for(int j=0;j<board[0].length;j++){
+    			helper(board,i,j,root,res);
+    		}
+    	}
+    	
+    	String[] arr=new String[res.size()];
+    	for(int i=0;i<arr.length;i++){
+    		arr[i]=list.get(i);
+    	}
+    	
+        return arr;
+    }
+    
+    public static void helper(char[][] board,int i,int j,TrieNode root, List<String> res){
+		TrieNode node=root;
+		
+		char ch=board[i][j];
+		
+		if(node.child[ch-'a']==null){
+			return;
+		} 
+		else{
+			node=node.child[ch-'a'];
+			if(node.word!=null){
+				res.add(node.word);
+				node.word=null;//remove duplicate
+			}
+			
+			helper(board,i,j,node,res);
+			
+//			board[i][j]='#';
+			
+			if(i-1>=0 ) helper(board,i-1,j,node,res);
+			if(i+1<=board.length-1) helper(board,i+1,j,node,res);
+			if(j-1>=0  ) helper(board,i,j-1,node,res);
+			if(j+1<=board[0].length-1) helper(board,i,j+1,node,res);
+			
+			if(i-1>=0 && j-1>=0 ) helper(board,i-1,j-1,node,res);
+			if(i-1>=0 && j+1<=board[0].length-1) helper(board,i-1,j+1,node,res);
+			if(i+1<=board.length-1 && j-1>=0 ) helper(board,i+1,j-1,node,res);
+			if(i+1<=board.length-1 && j+1<=board[0].length-1) helper(board,i+1,j+1,node,res);
+			
+//			board[i][j]=ch;
+		}
+	}
+    
+    
+    
+    public static TrieNode buildTrie(List<String> words){
+		TrieNode root=new TrieNode();
+		
+		for(String word:words){//for(int i=0;i<words.length;i++){words[i]}
+			TrieNode node=root;
+			
+			for(char ch:word.toCharArray()){
+				if(node.child[ch-'a']==null){
+					node.child[ch-'a']=new TrieNode();
+				}
+				node=node.child[ch-'a'];
+			}
+			node.word=word;
+			
+		}
+		
+		return root;
+	}
+}
+
+
+class TrieNode{
+//	boolean isWord;
+	String word;
+	TrieNode[] child;
+	
+	TrieNode(){
+		child=new TrieNode[26];
+	}
+}
+

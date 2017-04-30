@@ -1,0 +1,79 @@
+import java.sql.*;
+
+public class MySQL {
+	public static void main(String[] args){
+		Connection connection=null;
+		Statement statement=null;
+		PreparedStatement preparedStatement=null;
+		ResultSet resultSet=null;
+		
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/sms", "root","cx1991427cx" );
+			
+			
+			//1:select * from students
+			
+//			statement=connection.createStatement();
+//			resultSet=statement.executeQuery("select * from students");
+//			
+//			while(resultSet.next()){
+//				String name=resultSet.getString("Name");
+//				String department=resultSet.getString("department");
+//				int age=resultSet.getInt("age");
+//				
+//				System.out.println(name);
+//				System.out.println(department);
+//				System.out.println(age);
+//			}
+			
+			
+			//or:
+			preparedStatement=connection.prepareStatement("select * from students");
+			resultSet=preparedStatement.executeQuery();
+			
+			while(resultSet.next()){
+				String name=resultSet.getString("Name");
+				String department=resultSet.getString("department");
+				int age=resultSet.getInt("age");
+				
+				System.out.println(name);
+				System.out.println(department);
+				System.out.println(age);
+			}
+			
+			
+			//2:insert  
+			preparedStatement=connection.prepareStatement("insert  into students values (default,?,?,?,?,?)");
+			
+			preparedStatement.setString(1, "testName");
+			preparedStatement.setString(2, "testGender");
+			preparedStatement.setInt(3,27);
+			preparedStatement.setString(4, "China");
+			preparedStatement.setString(5, "FE");
+			
+			preparedStatement.executeUpdate();
+			
+			
+			//3:update
+			preparedStatement=connection.prepareStatement("update students set From=? where name=?");
+			
+			preparedStatement.setString(1,"NorthKorea");
+			preparedStatement.setString(2,"testName");
+			
+			preparedStatement.executeUpdate();
+			
+			
+			//4:
+			preparedStatement=connection.prepareStatement("delete from students where name=?;");
+			
+			preparedStatement.setString(1, "xiangcao");
+			
+			preparedStatement.executeUpdate();
+			
+			
+		}catch(Exception e){
+			System.out.println(e);
+		}
+	}
+}

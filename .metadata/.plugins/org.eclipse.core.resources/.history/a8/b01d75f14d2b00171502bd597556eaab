@@ -1,0 +1,15 @@
+
+
+public class Test {
+
+	public static void main(String[] args) {
+		String[] arr={"cat","bag","tab","dog"};
+		String filename="test.txt";
+//		String[] arr2=Answer.find_words(arr, filename);
+//		System.out.println(arr2.length);
+		
+		char ch='b';
+		System.out.println(ch-'\0');
+	}
+
+}

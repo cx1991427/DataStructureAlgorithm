@@ -1,0 +1,12 @@
+
+
+public class Test {
+
+	public static void main(String[] args) {
+		String[] arr={"aa","lw","or","ld"};
+		String filename="test.txt";
+		
+		System.out.println(Answer.find_words(arr, filename).length);
+	}
+
+}

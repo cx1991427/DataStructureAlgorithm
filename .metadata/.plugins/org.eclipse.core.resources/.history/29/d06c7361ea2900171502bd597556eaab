@@ -1,0 +1,14 @@
+package PG;
+
+public class Test {
+
+	public static void main(String[] args) {
+		String[] arr={"ab","cd","ef"};
+		String filename="test.txt"
+		// TODO Auto-generated method stub
+		Answer ans=new Answer();
+		ans.find_words(arr, )
+		
+	}
+
+}

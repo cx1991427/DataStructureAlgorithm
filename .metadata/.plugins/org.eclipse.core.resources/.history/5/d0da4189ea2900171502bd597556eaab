@@ -1,0 +1,13 @@
+package PG;
+
+public class Test {
+
+	public static void main(String[] args) {
+		String[] arr={"ab","cd","ef"};
+		String filename="test.txt";
+		Answer ans=new Answer();
+		
+		System.out.println(ans.find_words(arr, filename).length);
+	}
+
+}

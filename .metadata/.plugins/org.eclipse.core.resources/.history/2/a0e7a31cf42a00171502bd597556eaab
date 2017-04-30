@@ -1,0 +1,113 @@
+import java.util.*;
+import java.io.*;
+ 
+public class Answer {
+
+    public static String[] find_words(String[] boggle_board, String list_path) {
+       	List<String> list=new ArrayList<>();
+    	 try{
+ 	    	BufferedReader br = new BufferedReader(new FileReader(list_path));
+ 			String line = br.readLine();
+ 			
+ 		    while (line != null) {
+ 		    	list.add(line);
+ 		    	
+ 		        line = br.readLine();
+ 		    }
+ 	    }catch(Exception e){
+ 	    	System.out.println(e);
+ 	    }  
+    	 
+    	 char[][] board=new char[boggle_board.length][boggle_board[0].length()];
+    	 for(int i=0;i<boggle_board.length;i++){
+    		 for(int j=0;j<boggle_board[0].length();j++){
+    			 board[i][j]=boggle_board[i].charAt(j);
+    		 }
+    	 }
+    	 
+    	 TrieNode root=buildTrie(list);
+    	 List<String> res=new ArrayList<>();
+    	for(int i=0;i<board.length;i++){
+    		for(int j=0;j<board[0].length;j++){
+    			helper(board,i,j,root,res);
+    		}
+    	}
+    	
+    	String[] arr=new String[res.size()];
+    	for(int i=0;i<arr.length;i++){
+    		arr[i]=list.get(i);
+    	}
+    	
+        return arr;
+    }
+	
+	
+	public static void helper(char[][] board,int i,int j,TrieNode root, List<String> res){
+		TrieNode node=root;
+		
+		char ch=board[i][j];
+		
+		if(node.child[ch-'a']==null){
+			return;
+		} 
+		else{
+			node=node.child[ch-'a'];
+			if(node.word!=null){
+				res.add(node.word);
+				node.word=null;//remove duplicate
+			}
+			
+			helper(board,i,j,node,res);
+			
+//			board[i][j]='#';
+			
+			if(i-1>=0) helper(board,i-1,j,node,res);
+			if(i+1<=board.length-1) helper(board,i+1,j,node,res);
+			if(j-1>=0) helper(board,i,j-1,node,res);
+			if(j+1<=board[0].length-1) helper(board,i,j+1,node,res);
+			
+			if(i-1>=0 && j-1>=0 ) helper(board,i-1,j-1,node,res);
+			if(i-1>=0 && j+1<=board[0].length-1) helper(board,i-1,j+1,node,res);
+			if(i+1<=board.length-1 && j-1>=0 ) helper(board,i+1,j-1,node,res);
+			if(i+1<=board.length-1 && j+1<=board[0].length-1) helper(board,i+1,j+1,node,res);
+			
+//			board[i][j]=ch;
+		}
+	}
+	
+	public static TrieNode buildTrie(List<String> words){
+		TrieNode root=new TrieNode();
+		
+		for(String word:words){//for(int i=0;i<words.length;i++){words[i]}
+			TrieNode node=root;
+			
+			for(char ch:word.toCharArray()){
+				if(ch-'a'<0){
+					System.out.println(ch-'\0');
+					System.out.println(ch);
+				}
+				if(node.child[ch-'\0']==null){
+					node.child[ch-'\0']=new TrieNode();
+				}
+				node=node.child[ch-'\0'];
+			}
+			node.word=word;
+			
+		}
+		
+		return root;
+	}
+	
+}
+
+class TrieNode{
+//	boolean isWord;
+	String word;
+	TrieNode[] child;
+	
+	TrieNode(){
+		child=new TrieNode[128];
+	}
+}
+
+
