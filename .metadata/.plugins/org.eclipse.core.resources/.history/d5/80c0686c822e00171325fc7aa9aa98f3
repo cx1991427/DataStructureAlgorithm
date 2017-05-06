@@ -1,0 +1,37 @@
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class Client extends JFrame{
+	//1:
+	private JTextField tf;
+	private JTextArea ta;
+	
+	//2:
+	public Client(String title){
+		super(title);
+		
+		Container container=this.getContentPane();
+		tf=new JTextField();
+		ta=new JTextArea();
+		container.add(tf,"South");
+		container.add(ta,"Center");
+		
+		tf.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				ta.append(tf.getText()+"\n");
+				tf.setText("");
+			}
+		});
+	}
+	
+	//3:
+	
+}
+
+
+
+
+
+

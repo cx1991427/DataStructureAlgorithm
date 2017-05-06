@@ -4,7 +4,7 @@ import java.io.*;
 public class Client2{
 	public static void main(String[] args){
 		try{
-			Socket client=new Socket("127.0.0.1",8086);
+			Socket client=new Socket("127.0.0.1",8888);
 			
 			//get input from keyboard
 			BufferedReader input=new BufferedReader(new InputStreamReader(System.in));

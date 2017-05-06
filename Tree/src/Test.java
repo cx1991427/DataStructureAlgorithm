@@ -14,22 +14,10 @@ public class Test {
 		n2.right=n5;
 		
 		CommonMethod cm=new CommonMethod();
-		System.out.println(	cm.binarySearch(n1, 4).val);
 		
-		TreeNode node=n5;
-		node.val=40;
-		System.out.println(n5.val);
-		
-		List<Integer> list=new ArrayList<>();
-		HashMap<Integer,Integer> hm=new HashMap<>();
-		
-		for(int i=0;i<10;i++){
-			list.add(i);
-			hm.put(i*100, i);
-		}
-		
-		for(int x:hm.keySet()){
-			System.out.println(x);
+		List<TreeNode> list=cm.getPath(n1, n2);
+		for(int i=list.size()-1;i>=0;i--){
+			System.out.println(list.get(i).val);
 		}
 	}
 }

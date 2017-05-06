@@ -1,0 +1,48 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.net.*;
+import javax.swing.*;
+
+public class Client extends JFrame{
+	//1:
+	private JTextField tf;
+	private JTextArea ta;
+	 Socket socket;
+	
+	//2:
+	public Client(String title){
+		super(title);
+		
+		Container container=this.getContentPane();
+		tf=new JTextField();
+		ta=new JTextArea();
+		container.add(tf,"South");
+		container.add(ta,"Center");
+		
+		tf.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				ta.append(tf.getText()+"\n");
+				
+				tf.setText("");
+			}
+		});
+	}
+	
+	//3:
+	public void connect(){
+		ta.append("connecting to Server..."+"\n");
+		try{
+			socket=new Socket("127.0.0.1",8000);
+			ta.append("Connected to server!"+"\n");
+		}catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	
+}
+
+
+
+
+
+

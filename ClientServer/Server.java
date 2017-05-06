@@ -4,7 +4,7 @@ import java.io.*;
 public class Server{
 	public static void main(String[] args){
 		try{
-			ServerSocket server=new ServerSocket(8086);
+			ServerSocket server=new ServerSocket(8888);
 			Socket connectionSocket=null;
 			
 			boolean flag=true;

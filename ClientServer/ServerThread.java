@@ -12,8 +12,8 @@ public class ServerThread implements Runnable {
 	public void run() {
 		// TODO Auto-generated method stub
 		try{
-			PrintStream out=new PrintStream(connectionSocket.getOutputStream());
 			BufferedReader buf = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+			PrintStream out=new PrintStream(connectionSocket.getOutputStream());
 			
 			boolean flag=true;
 			while(flag){
@@ -21,7 +21,8 @@ public class ServerThread implements Runnable {
 				if(str.equals("bye")){
 					flag=false;
 				}
-				out.println("echo"+str);
+//				out.println("echo"+str);
+				System.out.print(str);
 			}
 			
 			out.close();

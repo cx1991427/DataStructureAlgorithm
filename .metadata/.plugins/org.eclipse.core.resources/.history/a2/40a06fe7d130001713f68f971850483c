@@ -1,0 +1,11 @@
+
+public class Test {
+	public static void main (String[] args){
+		String[] arr={"cao","ate","eat"};
+		char[] charArray=arr[0].toCharArray();
+		String sortedString=new String(charArray);
+		
+		System.out.println(sortedString);
+		System.out.println(arr[0]);
+	}
+}

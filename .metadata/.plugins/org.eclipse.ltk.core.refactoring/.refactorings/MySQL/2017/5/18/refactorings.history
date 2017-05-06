@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MySQL.java&apos; to &apos;NetworkProgramming/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;MySQL&apos;&#x0D;&#x0A;- Destination element: &apos;NetworkProgramming/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;MySQL.java&apos;" description="Copy compilation unit" destination="=NetworkProgramming/&lt;" element1="/src&lt;{MySQL.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1493668701869" units="1" version="1.0"/>
+</session>

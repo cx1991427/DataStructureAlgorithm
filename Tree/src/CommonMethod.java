@@ -172,4 +172,33 @@ public class CommonMethod {
 		}
 		return node;
 	}
+	//9:getPath ( a path from root node to target node! )
+	public List<TreeNode> getPath(TreeNode root,TreeNode targetNode){
+		List<TreeNode> res=new ArrayList<>();
+		
+		getPathHelper(root,targetNode,res);
+		
+		return res;
+	}
+	private TreeNode getPathHelper(TreeNode root, TreeNode targetNode, List<TreeNode> res){
+		if(root==null){
+			return null;
+		}
+		if(root==targetNode){
+			res.add(root);
+			return root;
+		}
+		
+		TreeNode left=getPathHelper(root.left,targetNode,res);
+		TreeNode right=getPathHelper(root.right,targetNode,res);
+		
+		if(left==null && right==null){
+			return null;
+		}
+		
+		res.add(root);
+		return root;
+	}
+	
+	
 }

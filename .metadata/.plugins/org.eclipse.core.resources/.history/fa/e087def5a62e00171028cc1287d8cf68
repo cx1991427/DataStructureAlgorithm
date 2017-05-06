@@ -1,0 +1,11 @@
+
+public class Test {
+	public static void main (String[] args){
+		Client client=new Client("Client Side");
+		
+		client.setVisible(true);
+		client.setSize(600,800);
+		
+		client.connect();
+	}
+}
